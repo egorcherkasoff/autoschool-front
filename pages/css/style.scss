@@ -1,1 +1,18 @@
 @import "reset.scss";
+@import "utils/variables.scss";
+@import "utils/fonts.scss";
+@import "utils/templates.scss";
+@import "utils/container.scss";
+@import "components/header.scss";
+@import "components/logo.scss";
+@import "components/footer.scss";
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: $default-font;
+}
