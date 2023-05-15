@@ -1,12 +1,14 @@
+@import "../utils/variables.scss";
+@import "../utils/templates.scss";
+
 .header {
     flex: 0 0 auto;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 3;
-    background-color: #ffd166;
-    height: 100px;
+    background-color: $primary-color;
+    @include size-wh(100%, 100px);
     box-shadow: -4px 2px 10px rgba(34, 60, 80, 0.2);
     &__container {
         display: flex;
@@ -22,9 +24,8 @@
             span {
                 display: block;
                 border-radius: 25px;
-                height: 8px;
-                width: 50px;
-                background-color: #1d3557;
+                @include size-wh(50px, 8px);
+                background-color: $secondary-color;
                 &:first-child {
                     margin-bottom: 7px;
                 }
@@ -54,13 +55,12 @@
                 display: block;
                 top: 80px;
                 left: 0;
-                background: #ffd166;
-                height: 100%;
-                width: 100%;
+                background: $primary-color;
+                @include size-wh(100%, 100%);
                 .header__nav-item {
                     padding: 15px;
                     width: 100%;
-                    border-bottom: 1px solid #1d3557;
+                    border-bottom: 1px solid $secondary-color;
                     margin-left: 0;
                 }
                 .header__nav-link {
@@ -69,58 +69,28 @@
             }
         }
         &-link {
-            text-decoration: none;
-            color: #1d3557;
-            font-weight: 700;
-            transition: width 0.3s ease;
-            position: relative;
             font-size: 1.2em;
-            &::before {
-                content: "";
-                height: 3px;
-                border-radius: 10px;
-                position: absolute;
-                bottom: -3px;
-                width: 0%;
-                background-color: #023e8a;
-                transition: width 0.3s ease;
-            }
-            &:hover {
-                color: #023e8a;
-                &::before {
-                    width: 100%;
-                    transition: width 0.3s ease;
-                }
-            }
+            text-decoration: none;
+            @extend %big_text;
+            @extend %link_hover_underline;
         }
         &-item {
             margin-left: 20px;
         }
     }
 }
-
 /* media goes here */
-
 @media screen and (max-width: 1024px) {
     .header {
         height: 80px;
-        &__logo {
-            width: 70px;
-            height: 70px;
+        &__logo.logo {
+            @include size-wh(70px, 70px);
         }
         &__nav-list {
             display: none;
         }
         &__nav-burger {
             display: block;
-        }
-    }
-}
-@media screen and (max-width: 768px) {
-    .header {
-        &__logo.logo {
-            width: 70px;
-            height: 70px;
         }
     }
 }
@@ -132,8 +102,7 @@
         }
         &__nav-burger {
             span {
-                height: 6px;
-                width: 50px;
+                @include size-wh(50px, 6px);
                 &:first-child {
                     margin-bottom: 6px;
                 }
@@ -143,8 +112,7 @@
             }
         }
         &__logo.logo {
-            width: 60px;
-            height: 60px;
+            @include size-wh(60px, 60px);
         }
     }
 }

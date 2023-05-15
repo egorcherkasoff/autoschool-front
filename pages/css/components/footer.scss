@@ -1,0 +1,62 @@
+@import "../utils/variables.scss";
+@import "../utils/templates.scss";
+
+.footer {
+    flex: 0 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include size-wh(100%, max-content);
+    box-shadow: -4px -5px 10px rgba(34, 60, 80, 0.2);
+    background-color: $primary-color;
+    &__container {
+        padding-right: 10px;
+    }
+    &__info-box {
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    &__socials {
+        padding-left: 10px;
+        display: flex;
+    }
+    &__social {
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+    &__nav-item {
+        margin-top: 10px;
+    }
+    &__nav-link {
+        color: $secondary-color;
+        @extend %link_hover_underline;
+        text-decoration: none;
+    }
+    &__title {
+        @extend %big_text;
+        font-size: 1.2em;
+        text-decoration: none;
+    }
+}
+/* media goes here */
+@media screen and (max-width: 576px) {
+    .footer {
+        &__info-box {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            row-gap: 10px;
+        }
+        &__nav-link {
+            font-size: 1.2em;
+        }
+        &__title:last-child {
+            padding-left: 10px;
+        }
+        &__title {
+            white-space: nowrap;
+        }
+        &__logo.logo {
+            @include size-wh(90px, 90px);
+        }
+    }
+}

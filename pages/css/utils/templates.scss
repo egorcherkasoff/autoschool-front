@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+@mixin size-wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+%big_text {
+    color: $secondary-color;
+    font-weight: 700;
+}
+%link_hover {
+    transition: width 0.3s ease;
+    position: relative;
+    &:hover {
+        color: $secondary-color-light;
+        &::before {
+            width: 100%;
+            transition: width 0.3s ease;
+        }
+    }
+}
+
+%link_hover_underline {
+    @extend %link_hover;
+    &::before {
+        content: "";
+        height: 3px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: -3px;
+        width: 0%;
+        background-color: $secondary-color-light;
+        transition: width 0.3s ease;
+    }
+}

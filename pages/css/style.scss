@@ -1,12 +1,10 @@
 @import "reset.scss";
-@import "utils/variables.scss";
 @import "utils/fonts.scss";
-@import "utils/templates.scss";
 @import "utils/container.scss";
 @import "components/header.scss";
 @import "components/logo.scss";
 @import "components/footer.scss";
-
+@import "components/social.scss";
 html {
     height: 100%;
 }
