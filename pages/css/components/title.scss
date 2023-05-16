@@ -1,0 +1,13 @@
+@import "../utils/templates.scss";
+.title {
+    margin-top: 25px;
+    @extend %big_text;
+    font-size: 1.8em;
+    text-align: center;
+}
+/* media goes here */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 1.3em;
+    }
+}
