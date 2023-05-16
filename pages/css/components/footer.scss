@@ -8,6 +8,19 @@
     @include size-wh(100%, max-content);
     box-shadow: -4px -5px 10px rgba(34, 60, 80, 0.2);
     background-color: $primary-color;
+    &__column {
+        display: flex;
+        flex-direction: column;
+        a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: $secondary-color;
+            @extend %link_hover;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
     &__container {
         padding-right: 10px;
     }
