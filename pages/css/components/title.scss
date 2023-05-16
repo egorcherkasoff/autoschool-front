@@ -1,6 +1,6 @@
 @import "../utils/templates.scss";
 .title {
-    margin-top: 25px;
+    margin: 25px 0 25px 0;
     @extend %big_text;
     font-size: 1.8em;
     text-align: center;

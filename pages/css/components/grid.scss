@@ -1,0 +1,79 @@
+@import "../utils/variables.scss";
+@import "../utils/templates.scss";
+
+.grid {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    &__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(1fr);
+        row-gap: 25px;
+        column-gap: 50px;
+    }
+    &__icon {
+        font-size: 4.5em;
+        color: $secondary-color;
+    }
+    &__text {
+        text-align: center;
+    }
+    &__card {
+        display: flex;
+        border: 1px solid #e2e2e2;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        @include size-wh(220px, 250px);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 4px 0px rgba(34, 60, 80, 0.2);
+        &-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    }
+}
+/* media goes here */
+@media screen and (max-width: 1024px) {
+    .grid {
+        &__card {
+            @include size-wh(200px, 270px);
+        }
+        &__cards {
+            column-gap: 10px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .grid {
+        &__card {
+            @include size-wh(230px, 260px);
+        }
+        &__cards {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(1fr);
+            column-gap: 25px;
+        }
+        &__text {
+            font-size: 1.1em;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .grid {
+        margin-bottom: 10px;
+        &__card {
+            width: fit-content;
+            height: min-content;
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        &__cards {
+            display: block;
+        }
+    }
+}
