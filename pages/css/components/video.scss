@@ -10,3 +10,14 @@
         height: 100%;
     }
 }
+/* media goes here */
+@media screen and (max-width: 768px) {
+    .video {
+        height: 390px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .video {
+        height: 300px;
+    }
+}

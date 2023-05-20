@@ -1,0 +1,47 @@
+@import "../utils/templates.scss";
+@import "../utils/variables.scss";
+.contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 900px;
+    column-gap: 25px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    text-align: center;
+    &__block {
+        margin: 0;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__title {
+        text-align: left;
+        font-size: 1.3em;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: $secondary-color;
+        @extend %link_hover;
+    }
+}
+/* media goes here */
+@media screen and (max-width: 768px) {
+    .contacts {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .contacts {
+        display: block;
+        &__item {
+            margin-bottom: 15px;
+        }
+    }
+}

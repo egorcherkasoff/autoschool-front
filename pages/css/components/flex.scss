@@ -1,0 +1,10 @@
+.flex {
+    display: flex;
+    &--rounded {
+        border-radius: 10px;
+    }
+    &--centered {
+        margin: 0 auto;
+        width: 900px;
+    }
+}
