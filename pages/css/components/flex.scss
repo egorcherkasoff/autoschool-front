@@ -1,10 +1,15 @@
 .flex {
     display: flex;
-    &--rounded {
-        border-radius: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    &--sb {
+        justify-content: space-between;
     }
-    &--centered {
-        margin: 0 auto;
-        width: 900px;
+}
+/* media goes here */
+@media screen and (max-width: 768px) {
+    .flex--sb {
+        width: 100%;
+        justify-content: center;
     }
 }

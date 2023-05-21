@@ -1,0 +1,8 @@
+.image {
+}
+/* media goes here */
+@media screen and (max-width: 768px) {
+    .image--glow {
+        display: none;
+    }
+}
